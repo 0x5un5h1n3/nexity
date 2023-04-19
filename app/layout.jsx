@@ -1,7 +1,7 @@
 import "./globals.css"
 import Nav from "./auth/Nav"
 import { Poppins } from 'next/font/google'
-
+import QueryWrapper from "./auth/QueryWrapper"
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -19,8 +19,10 @@ export default function RootLayout({ children }) {
       <body
         className={`mx-4 md:mx-48 xl:mx-96 ${poppins.variable} font-sans bg-gray-200`}
       >
-        <Nav />
-        {children}
+        <QueryWrapper>
+          <Nav />
+          {children}
+        </QueryWrapper>
       </body>
     </html>
   )
